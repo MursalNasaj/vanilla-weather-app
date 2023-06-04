@@ -21,6 +21,7 @@ li {
     padding: 0;
     color: rgb(135,135,135);
     font-size: 16px;
+    text-transform: capitalize;
     font-weight: 100;
     line-height: 19px;
 
