@@ -14,6 +14,33 @@ function formatDate(timeStamp){
 
 }
 
+function displyForecast(){
+    let forecastElement = document.querySelector("#forecast"); 
+    let forecastHTML =  `<div class="row">`;
+    let days = ["Thu", "Fri", "Sat","Sun","Mon","Tue"];
+    days.forEach(function(day){
+        forecastHTML = forecastHTML + `
+        <div class="col-2">
+           <div class="weather-forcast-date">
+            ${day} 
+           </div>
+            <img src="https://i.pinimg.com/originals/6f/8f/0a/6f8f0a1379f61a433b90c34e95789927.jpg" alt="" width="42">
+            <div class="weather-forcast-temperature">
+                <span class="weather-forcast-temperature-max">
+                    18°
+                </span>
+                <span class="weather-forcast-temperature-min">
+                    12°
+                </span>
+            </div>
+        </div>`;
+
+    })
+ 
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+                        
+}
  
  function displyTemperature(response){
     console.log(response.data);
@@ -82,3 +109,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click",showTempretureCelsius);
 
 search("New York");
+displyForecast();
